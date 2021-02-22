@@ -17,14 +17,14 @@ class CreateProductosTable extends Migration
             $table->id();
             $table->string('codigo',50)->unique();
             $table->string('nombre',50);
-            $table->string('descripcion',50);
-            $table->double('precio_costo');
-            $table->double('precio_venta');
+            $table->string('descripcion',50)->nullable();
+            $table->double('precio_costo')->nullable();
+            $table->double('precio_venta')->nullable();
             $table->double('precio_porcentaje');
             $table->integer('stock_min');
             $table->integer('stock_max');
             
-            $table->string('estatus',45);
+            $table->string('estatus',45)->default('ACTIVO');
             $table->timestamps();
         });
     }
